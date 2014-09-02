@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="x4m.github.io : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <script src="javascripts/jquery-2.1.1.min.js"></script>
+    <script src="javascripts/jquery.expander.js"></script>
+
+    <title>x4m.github.io</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/x4m">View on GitHub</a>
+
+          <h1 id="project_title">x4m.github.io</h1>
+          <h2 id="project_tagline"></h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a name="hello-world" class="anchor" href="#hello-world"><span class="octicon octicon-link"></span></a>План</h2>
+
+<p>
+<a href="Учебный план 2015.xlsx">Общий план в XLSX</a>
+</p>
+
+<hr>
+<p><h3>Лабораторные</h3></p>
+{0}
+<hr>
+
+<p><h3>Лекции</h3>
+{1}
+
+
+ <div class="expandable">
+    <p>Название лабы
+	<br> 
+	Ut enim ad minim veniam, quis nostrud
+     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.
+    </p>
+     <br/>
+     <hr/>
+    <p>Reprehenderit in voluptate<br> velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt inre culpa qui
+    officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+ <br/>
+     <hr/>
+
+	 
+	 
+	 
+</p>
+
+<hr>
+      </section>
+    </div>  
+
+  </body>
+  <script>
+//<![CDATA[ 
+$(function(){
+
+$('div.expandable p').expander({
+    sliceOn: '<br',
+    expandPrefix:     ' ', 
+    expandText:       '[...]', 
+    userCollapseText: '[^]' 
+});
+
+});//]]>  
+
+  </script>
+</html>

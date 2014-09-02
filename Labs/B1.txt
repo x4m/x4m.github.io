@@ -1,0 +1,25 @@
+Задание B1. Запись данных в базу данных
+Данная лабораторная работа демонстрирует оперирование сущностями БД с применением Entity Framework 6.
+
+0. Для выполнения данной лабораторной работы перенесите код описывающий ваши классы данных в отдельный проект.
+1. В этом проекте добавьте ссылки на EntityFramework 6.0(через nuget, также добавится ссылка на EntityFramework.SqlServer)
+2. Остлаьные требуемые библиотеки при необходимости вам поможет подключить ReSharper
+3. Создайте секций настроек проекта (Settings) в свойствах проекта.
+4. В файле app.config определите соединени с базой данных
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+    <add name="Store" connectionString="Data Source=(LocalDb)\v11.0;Initial Catalog=Store;Integrated Security=SSPI;" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+</configuration>
+5. Добавьте в корневой класс идентфицирующую информацию (id, дату заполнения, название)
+Идентификаторы добавьте во всех классы данных.
+6. Создайте класс с описанием модели вашей базы данных
+public class StoreContext : DbContext
+{
+    public StoreContext() : base("name=Store") { }
+    public DbSet<Product> Products { get; set; }
+}
+7. Добавьте в интерфейс кнопку сохранения в БД и чтения из БД.
+Кнопка сохранения в БД открывает диалог ввода названия, кнопка чтения из БД открывает список сохранённых корневых объектов данных
+8. Создайте данные в БД и проверьте их наличие в физической СУБД через Server Explorer

@@ -1,0 +1,2 @@
+Выбирается необфусцированный .net-компонент (DevExpress, SyncFusion или Actipro).
+С применением DotPeek и ildasm\ilasm в нём выключается защита.
