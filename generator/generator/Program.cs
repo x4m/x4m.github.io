@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace generator
 {
@@ -31,18 +32,24 @@ namespace generator
         {
             var strings = text.Split(new []{Environment.NewLine},StringSplitOptions.RemoveEmptyEntries);
 
-            return "<div class=\"expandable\"><p>" + strings[0] + " <br>" + string.Join("<br/>",strings.Skip(1)) + "</p><br/></div>" + Environment.NewLine;
+            return "<div class=\"expandable\"><p><strong>" + strings[0] + "</strong> <br/>" + string.Join("<br/>", strings.Skip(1).Select(HttpUtility.HtmlEncode)) + "</p><hr/></div>" + Environment.NewLine;
         }
 
         private static string FormatSection(string caption, string text)
         {
+            var week = caption.Substring(0,2);
 
-            return string.Format("<div class=\"expandable\"><p> Неделя {0} Занаятие {1} Тема {2} <br>{3}</p><br/></div>{4}", 
-                caption.Substring(0,2), 
+            var estimatedWeekNumber = int.Parse(week)-1;
+
+            var dateTime = new DateTime(2015,02,9);
+            return string.Format("<div class=\"expandable\"><p> Неделя <strong>{0}</strong>[{5}] Занаятие <strong>{1}</strong> Тема <strong>{2}</strong> <br/>{3}</p><hr/></div>{4}", 
+                week, 
                 caption.Substring(2,2), 
                 caption.Substring(5), 
                 text.Replace(Environment.NewLine,"<br/>"), 
-                Environment.NewLine);
+                Environment.NewLine,
+                dateTime.AddDays(7*estimatedWeekNumber).ToLongDateString()
+                );
         }
     }
 }
