@@ -1,6 +1,7 @@
 ﻿Задание А1. Системы контроля версий
 
-Цель задания: ознакомление с системой контроля версий Git через TortoiseGit или GitHub for Windows
+Цель задания: ознакомление с системой контроля версий Git через TortoiseGit или GitHub for Windows.
+
 Для выполнения задания необходимо:
 
 0. Установить tortoiseGit https://code.google.com/p/tortoisegit/ и требуемые ему компоненты (Git for Windows)или установить программу GitHub for Windows: https://windows.github.com/
